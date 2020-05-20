@@ -1,0 +1,21 @@
+{
+    "name": "brjun/brjtest",
+    "description": "brjtest",
+    "license": "library",
+    "authors": [
+        {
+            "name": "brjun",
+            "email": "351409246@qq.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Brjun\\": "./src/"
+        },
+        "files": [
+            "./src/Core/Helper/Functions.php"
+        ]
+    }
+}
