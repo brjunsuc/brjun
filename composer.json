@@ -1,7 +1,8 @@
 {
     "name": "brjun/brjtest",
     "description": "brjtest",
-    "license": "library",
+    "type": "library",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "brjun",
@@ -9,6 +10,7 @@
         }
     ],
     "require": {
+
     },
     "autoload": {
         "psr-4": {
