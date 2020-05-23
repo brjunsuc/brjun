@@ -15,7 +15,8 @@
         "psr/simple-cache": "^1.0",
         "illuminate/database": "^7.5",
         "illuminate/pagination": "^7.5",
-        "monolog/monolog": "^2.0"
+        "monolog/monolog": "^2.0",
+        "illuminate/http": "^7.12"
     },
     "autoload": {
         "psr-4": {
