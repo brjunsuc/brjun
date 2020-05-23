@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Brjun\Core\Service;
+namespace W7\Engine\Core\Service;
 
 
 class DbService
