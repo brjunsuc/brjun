@@ -1,5 +1,5 @@
 {
-    "name": "w7/engine",
+    "name": "w7engine/w7engine",
     "description": "微擎框架核心",
     "type": "library",
     "license": "Apache-2.0",
