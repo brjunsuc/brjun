@@ -1,7 +1,7 @@
 <?php
 
 
-namespace W7\Engine\Core\Config;
+namespace W7engine\Core\Config;
 
 use ArrayAccess;
 use Illuminate\Contracts\Config\Repository as ConfigContract;

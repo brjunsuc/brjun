@@ -1,6 +1,6 @@
 <?php
 
-namespace W7\Engine\Core\Library\Agent;
+namespace W7engine\Core\Library\Agent;
 
 class Agent
 {

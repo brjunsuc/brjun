@@ -1,11 +1,11 @@
 <?php
 
 
-namespace W7\Engine;
+namespace W7engine;
 
 
 use Illuminate\Container\Container;
-use W7\Engine\Core\Log\LogServiceProvider;
+use W7engine\Core\Log\LogServiceProvider;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,12 +24,12 @@ class App extends Container
 
 	protected function registerConstant()
 	{
-		define('IN_IA', true);
-		define('STARTTIME', microtime());
-		define('IA_ROOT', str_replace('\\', '/', dirname(dirname(__FILE__))));
-		define('MAGIC_QUOTES_GPC', (function_exists('get_magic_quotes_gpc') && @get_magic_quotes_gpc()) || @ini_get('magic_quotes_sybase'));
-		define('TIMESTAMP', time());
-		define('ATTACHMENT_ROOT', IA_ROOT . '/attachment/');
+//		define('IN_IA', true);
+//		define('STARTTIME', microtime());
+//		define('IA_ROOT', str_replace('\\', '/', dirname(dirname(__FILE__))));
+//		define('MAGIC_QUOTES_GPC', (function_exists('get_magic_quotes_gpc') && @get_magic_quotes_gpc()) || @ini_get('magic_quotes_sybase'));
+//		define('TIMESTAMP', time());
+//		define('ATTACHMENT_ROOT', IA_ROOT . '/attachment/');
 	}
 
 	protected function registerBaseBindings()

@@ -1,19 +1,19 @@
 <?php
 
 
-namespace W7\Engine\Core\Http;
+namespace W7engine\Core\Http;
 
 use Illuminate\Contracts\Http\Kernel as KernelContract;
-use W7\Engine\App;
+use W7engine\App;
 
 class Kernel implements KernelContract
 {
 	protected $app;
 
 	protected $bootstrappers = [
-		\W7\Engine\Core\Bootstrap\LoadConfig::class,
-		\W7\Engine\Core\Bootstrap\RegisterProviders::class,
-		\W7\Engine\Core\Bootstrap\BootProviders::class
+		\W7engine\Core\Bootstrap\LoadConfig::class,
+		\W7engine\Core\Bootstrap\RegisterProviders::class,
+		\W7engine\Core\Bootstrap\BootProviders::class
 	];
 
 	public function __construct(App $app)

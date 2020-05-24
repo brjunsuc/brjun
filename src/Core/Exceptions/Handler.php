@@ -1,7 +1,7 @@
 <?php
 
 
-namespace W7\Engine\Core\Exceptions;
+namespace W7engine\Core\Exceptions;
 
 
 class Handler

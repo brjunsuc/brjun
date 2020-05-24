@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "W7\\Engine\\": "./src/"
+            "W7engine\\": "./src/"
         },
         "files": [
             "./src/Core/Helper/Functions.php"

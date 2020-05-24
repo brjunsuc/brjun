@@ -1,10 +1,10 @@
 <?php
 
 
-namespace W7\Engine\Core\Bootstrap;
+namespace W7engine\Core\Bootstrap;
 
 
-use W7\Engine\App;
+use W7engine\App;
 
 class RegisterProviders
 {

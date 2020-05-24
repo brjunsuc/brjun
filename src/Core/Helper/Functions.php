@@ -1,6 +1,6 @@
 <?php
 
-namespace W7\Engine\Core\Helper;
+namespace W7engine\Core\Helper;
 
 if (!function_exists('iconfig')) {
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace W7\Engine\Core\Helper\Traiter;
+namespace W7engine\Core\Helper\Traiter;
 
 
 trait InstanceTraiter {

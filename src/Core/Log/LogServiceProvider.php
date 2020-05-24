@@ -1,7 +1,7 @@
 <?php
 
 
-namespace W7\Engine\Core\Log;
+namespace W7engine\Core\Log;
 
 
 use Illuminate\Support\ServiceProvider;
