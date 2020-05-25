@@ -7,7 +7,6 @@ namespace W7engine;
 use Illuminate\Container\Container;
 use W7engine\Core\Log\LogServiceProvider;
 use Illuminate\Support\Arr;
-use Illuminate\Support\ServiceProvider;
 
 class App extends Container
 {
@@ -104,14 +103,9 @@ class App extends Container
 			return;
 		}
 		array_walk($this->serviceProviders, function($provider) {
-			$this->bootProvider($provider);
+			if(method_exists($provider, 'boot')) {
+				return $this->call([$provider, 'boot']);
+			}
 		});
-	}
-
-	protected function bootProvider(ServiceProvider $provider)
-	{
-		if(method_exists($provider, 'boot')) {
-			return $this->call([$provider, 'boot']);
-		}
 	}
 }
