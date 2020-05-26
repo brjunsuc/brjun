@@ -11,7 +11,9 @@ use Illuminate\Support\Arr;
 class App extends Container
 {
 	protected $hasBeenBootstrapped = false;
+
 	protected $serviceProviders = [];
+
 	protected $booted = false;
 
 	public function __construct()
@@ -23,12 +25,12 @@ class App extends Container
 
 	protected function registerConstant()
 	{
-//		define('IN_IA', true);
-//		define('STARTTIME', microtime());
-//		define('IA_ROOT', str_replace('\\', '/', dirname(dirname(__FILE__))));
-//		define('MAGIC_QUOTES_GPC', (function_exists('get_magic_quotes_gpc') && @get_magic_quotes_gpc()) || @ini_get('magic_quotes_sybase'));
-//		define('TIMESTAMP', time());
-//		define('ATTACHMENT_ROOT', IA_ROOT . '/attachment/');
+		!defined('IN_IA') && define('IN_IA', true);
+		!defined('STARTTIME') && define('STARTTIME', microtime());
+		!defined('IA_ROOT') && define('IA_ROOT', str_replace('\\', '/', dirname(dirname(__FILE__))));
+		!defined('MAGIC_QUOTES_GPC') && define('MAGIC_QUOTES_GPC', (function_exists('get_magic_quotes_gpc') && @get_magic_quotes_gpc()) || @ini_get('magic_quotes_sybase'));
+		!defined('TIMESTAMP') && define('TIMESTAMP', time());
+		!defined('ATTACHMENT_ROOT') && define('ATTACHMENT_ROOT', IA_ROOT . '/attachment/');
 	}
 
 	protected function registerBaseBindings()
@@ -70,7 +72,27 @@ class App extends Container
 			$provider = $this->resolveProvider($provider);
 		}
 		$provider->register();
+
+		if (property_exists($provider, 'bindings')) {
+			foreach ($provider->bindings as $key => $value) {
+				$this->bind($key, $value);
+			}
+		}
+
+		if (property_exists($provider, 'singletons')) {
+			foreach ($provider->singletons as $key => $value) {
+				$this->singleton($key, $value);
+			}
+		}
+
 		$this->markAsRegistered($provider);
+	}
+
+	public function registerConfiguredProviders()
+	{
+		foreach ($this->config['providers'] as $provider) {
+			$this->register($provider);
+		}
 	}
 
 	public function getProvider($provider)
@@ -102,6 +124,7 @@ class App extends Container
 		if ($this->isBooted()) {
 			return;
 		}
+
 		array_walk($this->serviceProviders, function($provider) {
 			if(method_exists($provider, 'boot')) {
 				return $this->call([$provider, 'boot']);

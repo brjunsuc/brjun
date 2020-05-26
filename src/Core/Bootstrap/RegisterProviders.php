@@ -10,7 +10,6 @@ class RegisterProviders
 {
 	public function bootstrap(App $app)
 	{
-		echo '----RegisterProviders----';
-//		$app->registerConfiguredProviders();
+		$app->registerConfiguredProviders();
 	}
 }

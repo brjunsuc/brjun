@@ -10,7 +10,6 @@ class BootProviders
 {
 	public function bootstrap(App $app)
 	{
-		echo '---BootProviders---';
 		$app->boot();
 	}
 }

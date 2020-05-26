@@ -11,9 +11,9 @@ class Kernel implements KernelContract
 	protected $app;
 
 	protected $bootstrappers = [
-		\W7engine\Core\Bootstrap\LoadConfig::class,
+		\W7engine\Core\Config\LoadConfig::class,
 		\W7engine\Core\Bootstrap\RegisterProviders::class,
-		\W7engine\Core\Bootstrap\BootProviders::class
+		\W7engine\Core\Bootstrap\BootProviders::class,
 	];
 
 	public function __construct(App $app)
