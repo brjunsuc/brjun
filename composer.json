@@ -1,5 +1,5 @@
 {
-    "name": "w7engine/w7engine",
+    "name": "w7/engine",
     "description": "微擎框架核心",
     "type": "library",
     "license": "Apache-2.0",
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "W7engine\\": "./src/"
+            "W7\\Engine\\": "./src/"
         },
         "files": [
             "./src/Core/Helper/Functions.php"

@@ -1,20 +1,15 @@
 <?php
 
 
-namespace W7engine\Core\Http;
+namespace W7\Engine\Core\Http;
 
 use Illuminate\Contracts\Http\Kernel as KernelContract;
-use W7engine\App;
+use W7\Engine\App;
+use W7\Engine\Core\Config\LoadConfig;
 
 class Kernel implements KernelContract
 {
 	protected $app;
-
-	protected $bootstrappers = [
-		\W7engine\Core\Config\LoadConfig::class,
-		\W7engine\Core\Bootstrap\RegisterProviders::class,
-		\W7engine\Core\Bootstrap\BootProviders::class,
-	];
 
 	public function __construct(App $app)
 	{
@@ -23,14 +18,9 @@ class Kernel implements KernelContract
 
 	public function bootstrap()
 	{
-		if (!$this->app->hasBeenBootstrapped()) {
-			$this->app->bootstrapWith($this->bootstrappers());
-		}
-	}
-
-	protected function bootstrappers()
-	{
-		return $this->bootstrappers;
+		$this->app->make(LoadConfig::class)->bootstrap($this->app);
+		$this->app->registerConfiguredProviders();
+		$this->app->boot();
 	}
 
 	public function handle($request)

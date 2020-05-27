@@ -1,11 +1,11 @@
 <?php
 
 
-namespace W7engine;
+namespace W7\Engine;
 
 
 use Illuminate\Container\Container;
-use W7engine\Core\Log\LogServiceProvider;
+use W7\Engine\Core\Log\LogServiceProvider;
 use Illuminate\Support\Arr;
 
 class App extends Container
@@ -42,7 +42,8 @@ class App extends Container
 
 	protected function registerBaseServiceProviders()
 	{
-		$this->register(new LogServiceProvider($this));
+		//$this->register(new LogServiceProvider($this));
+
 	}
 
 	public function bootstrapWith(array $bootstrappers)

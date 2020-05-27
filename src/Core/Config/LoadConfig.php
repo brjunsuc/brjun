@@ -1,11 +1,11 @@
 <?php
 
 
-namespace W7engine\Core\Config;
+namespace W7\Engine\Core\Config;
 
 
-use W7engine\App;
-use W7engine\Core\Config\Repository as RepositoryContract;
+use W7\Engine\App;
+use W7\Engine\Core\Config\Repository as RepositoryContract;
 
 class LoadConfig
 {

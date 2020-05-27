@@ -1,7 +1,7 @@
 <?php
 
 
-namespace W7engine\Core\Log;
+namespace W7\Engine\Core\Log;
 
 
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class LogServiceProvider extends ServiceProvider
 
 	public function boot()
 	{
-		echo 'bootdb';
+		echo 'bootLogServiceProvider';
 		return;
 	}
 }
